@@ -10,40 +10,48 @@ package Clases;
  * @author JAROD
  */
 public class Pan {
-	// Mandatory attributes:
-	private String tipo;
+	//Atruibutos
+        private String nombre;
+	private String categoria;
 	private String tamaño;
 	private double precio;
 	
 	public Pan(PanBuilder pb) {
-		tipo = pb.tipo;
+                nombre = pb.nombre;
+		categoria = pb.categoria;
 		precio = pb.precio;
 		tamaño = pb.tamaño;
 	}
 	public void showInfo() {
-		System.out.println("Tipo: " + tipo + "\n" + 
-				"Precio: " + precio + "\n" + 
+		System.out.println("Nombre: " + nombre + "\n" +
+                                "Categoria: " + categoria + "\n" + 
+				"Precio: Q" + precio + "\n" + 
 				"Tamaño: " + tamaño + '\n');
 	}
 	
-	// Static inner Builder class:
+	// Clase estatica interna del builder
 	public static class PanBuilder{
-		private String tipo;
+                private String nombre;
+		private String categoria;
 		private String tamaño;
 		private double precio;
 		
-		// Overloaded constructor to set mandatory attributes:
+		//Constructor
 		public PanBuilder() {
-			this.tipo = tipo;
+                        this.nombre = nombre;
+			this.categoria = categoria;
 			this.tamaño = tamaño;
                         this.precio = precio;
 		}
-
-		// Setters with return type IceCreamBuilder
-		// to allow method chaining:
-
-		public PanBuilder setTipo(String t) {
-			tipo = t;
+                
+		// Setters con tipo de retorno PanBuilder
+                public PanBuilder setNombre(String n){ 
+                        nombre = n;
+                        return this;
+                }
+		
+                public PanBuilder setCategoria(String t) {
+			categoria = t;
 			return this;
 		}
 		public PanBuilder setTamaño(String t) {
@@ -55,7 +63,7 @@ public class Pan {
 			return this;
 		}
 
-		// Create and return an IceCream:
+		// Crear y devolver Pan:
 		public Pan build() {
 			return new Pan(this);
 		}

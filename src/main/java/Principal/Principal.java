@@ -14,15 +14,15 @@ public class Principal {
 	public static void main(String[] args) {
 		Pan.PanBuilder builder = new Pan.PanBuilder();
 		
-		Pan p1 = builder
-                                 .setPrecio(2)
-                                 .setTipo("Desabrido")
+		Pan p1 = builder.setNombre("Pan Pirujo")
+                                 .setPrecio(1)
+                                 .setCategoria("Desabrido")
                                  .setTamaño("Grande")
                                  .build();
 
-		Pan p2 = builder
-				.setPrecio(1.50)
-				.setTipo("Dulce")
+		Pan p2 = builder.setNombre("Cubiletes")
+				.setPrecio(0.50)
+				.setCategoria("Dulce")
 				.setTamaño("pequeño")
 				.build();
 				
